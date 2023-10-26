@@ -1,7 +1,7 @@
 ---
-name: "Setup Python"
+name: "Setup Python FixedRunnerName"
 description: "Set up a specific version of Python and add the command-line tools to the PATH."
-author: "GitHub"
+author: "jonluca"
 inputs:
   python-version:
     description: "Version range or exact version of Python or PyPy to use, using SemVer's version range syntax. Reads from .python-version if unset."
@@ -34,7 +34,7 @@ outputs:
   python-path:
     description: "The absolute path to the Python or PyPy executable."
 runs:
-  using: 'node16'
+  using: 'node20'
   main: 'dist/setup/index.js'
   post: 'dist/cache-save/index.js'
   post-if: success()
